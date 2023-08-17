@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tut_app/domain/model/onboarding_models.dart';
+import 'package:tut_app/domain/models.dart';
 import 'package:tut_app/presentation/onboarding/view/widget/custom_arrows.dart';
 import 'package:tut_app/presentation/onboarding/view/widget/custom_indicator.dart';
 import 'package:tut_app/presentation/onboarding/view/widget/custom_onboarding_page.dart';

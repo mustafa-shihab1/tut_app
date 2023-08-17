@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:tut_app/domain/model/onboarding_models.dart';
+import 'package:tut_app/domain/models.dart';
 import 'package:tut_app/presentation/resources/values_manager.dart';
 
 class OnBoardingPage extends StatelessWidget {
