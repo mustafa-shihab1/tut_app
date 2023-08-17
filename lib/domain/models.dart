@@ -1,4 +1,4 @@
-
+/// ****************************** [OnBoarding Model] ****************************** ///
 class SliderObject {
   String title;
   String subTitle;
@@ -7,7 +7,6 @@ class SliderObject {
   SliderObject(this.title, this.subTitle, this.image);
 }
 
-
 class SliderViewObject {
   SliderObject sliderObject;
   int numOfSlides;
@@ -15,3 +14,5 @@ class SliderViewObject {
 
   SliderViewObject(this.sliderObject, this.numOfSlides, this.currentIndex);
 }
+
+/// ****************************** [Login Model] ****************************** ///
