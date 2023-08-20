@@ -1,3 +1,4 @@
+import 'package:dio/dio.dart';
 import 'package:tut_app/data/network/failure.dart';
 
 enum DataSource {
@@ -17,8 +18,21 @@ enum DataSource {
   UNKNOWN,
 }
 
+class ErrorHandler implements Exception {
+  late Failure failure;
+
+  ErrorHandler.handle(dynamic error) {
+    if (error is DioError) {
+      // dio error so its an error from response of the API or from dio itself
+    } else {
+      // default error
+      failure = DataSource.UNKNOWN.getFailure();
+    }
+  }
+}
+
 extension DataSourceExtension on DataSource{
-  Failure getFailer(){
+  Failure getFailure(){
     switch(this){
 case DataSource.SUCCESS:
         return Failure(ResponseCode.SUCCESS, ResponseMessage.SUCCESS);
