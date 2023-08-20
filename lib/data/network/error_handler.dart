@@ -24,10 +24,28 @@ class ErrorHandler implements Exception {
   ErrorHandler.handle(dynamic error) {
     if (error is DioError) {
       // dio error so its an error from response of the API or from dio itself
+      failure = _handleError(error);
     } else {
       // default error
       failure = DataSource.UNKNOWN.getFailure();
     }
+  }
+}
+
+Failure _handleError(DioError error) {
+  switch (error.type) {
+    case DioErrorType.connectionTimeout:
+      return DataSource.CONNECT_TIMEOUT.getFailure();
+    case DioErrorType.sendTimeout:
+      return DataSource.SEND_TIMEOUT.getFailure();
+    case DioErrorType.receiveTimeout:
+      return DataSource.RECIEVE_TIMEOUT.getFailure();
+    case DioErrorType.badResponse:
+      return DataSource.BAD_REQUEST.getFailure();
+    case DioErrorType.cancel:
+      return DataSource.CANCEL.getFailure();
+    default:
+      return DataSource.UNKNOWN.getFailure();
   }
 }
 
