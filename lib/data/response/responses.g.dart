@@ -52,10 +52,14 @@ AuthResponse _$AuthResponseFromJson(Map<String, dynamic> json) => AuthResponse(
       contacts: json['contacts'] == null
           ? null
           : ContactsResponse.fromJson(json['contacts'] as Map<String, dynamic>),
-    );
+    )
+      ..status = json['status'] as int?
+      ..message = json['message'] as String?;
 
 Map<String, dynamic> _$AuthResponseToJson(AuthResponse instance) =>
     <String, dynamic>{
+      'status': instance.status,
+      'message': instance.message,
       'customer': instance.customer,
       'contacts': instance.contacts,
     };
