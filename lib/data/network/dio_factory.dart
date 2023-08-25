@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:tut_app/app/app_pref.dart';
 import 'package:tut_app/app/constants.dart';
 
 const String APPLICATION_JSON = "application/json";
@@ -8,14 +9,19 @@ const String AUTHORIZATION = "authorization";
 const String DEFAULT_LANGUAGE = "langauge";
 
 class DioFactory {
+  final AppPreferences _appPreferences;
+
+  DioFactory(this._appPreferences);
+
   Future<Dio> getDio() async {
     Dio dio = Dio();
+    String language = await _appPreferences.getAppLanguage();
 
     Map<String, String> headers = {
       CONTENT_TYPE: APPLICATION_JSON,
       ACCEPT: APPLICATION_JSON,
       AUTHORIZATION: Constants.token,
-      DEFAULT_LANGUAGE: "en" // todo get lang from app prefs
+      DEFAULT_LANGUAGE: language
     };
 
     dio.options = BaseOptions(
