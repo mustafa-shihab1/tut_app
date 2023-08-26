@@ -21,14 +21,6 @@ class LoginViewModel
   Sink get inputUserName => throw UnimplementedError();
 
   @override
-  // TODO: implement isOutputPasswordValid
-  Stream<bool> get isOutputPasswordValid => throw UnimplementedError();
-
-  @override
-  // TODO: implement isOutputUserNameValid
-  Stream<bool> get isOutputUserNameValid => throw UnimplementedError();
-
-  @override
   login() {
     // TODO: implement login
     throw UnimplementedError();
@@ -45,6 +37,14 @@ class LoginViewModel
     // TODO: implement setUserName
     throw UnimplementedError();
   }
+
+  @override
+  // TODO: implement isOutputPasswordValid
+  Stream<bool> get isOutputPasswordValid => throw UnimplementedError();
+
+  @override
+  // TODO: implement isOutputUserNameValid
+  Stream<bool> get isOutputUserNameValid => throw UnimplementedError();
 }
 
 abstract class LoginViewModelInputs {
