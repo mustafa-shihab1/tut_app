@@ -35,9 +35,9 @@ class LoginViewModel
     (await _loginUseCase.execute(
         LoginUseCaseInput(loginObject.userName, loginObject.password))
     ).fold((failure){
-      
+      print(failure.message);
     },(data){
-
+      print(data.customer!.name);
     });
   }
 
