@@ -107,11 +107,15 @@ class _LoginViewState extends State<LoginView> {
                   padding: const EdgeInsets.only(
                       left: AppPadding.p28, right: AppPadding.p28),
                   child: StreamBuilder<bool>(
-                      stream: _viewModel.isOutputPasswordValid,
+                      stream: _viewModel.outAreAllInputsValid,
                       builder: (context, snapshot) {
-                        return ElevatedButton(onPressed: (){
-                          _viewModel.login();
-                        }, child: const Text(AppStrings.login));
+                        return ElevatedButton(
+                            onPressed: (snapshot.data ?? false)
+                                ? () {
+                              _viewModel.login();
+                            }
+                                : null,
+                            child: const Text(AppStrings.login));
                       }),
                 ),
               ],
