@@ -67,11 +67,11 @@ class LoginViewModel
   }
 
   @override
-  Stream<bool> get outIsPasswordValid => _passwordController.stream
+  Stream<bool> get isOutputPasswordValid => _passwordController.stream
       .map((password) => _isPasswordValid(password));
 
   @override
-  Stream<bool> get outIsUserNameValid => _userNameController.stream
+  Stream<bool> get isOutputUserNameValid => _userNameController.stream
       .map((userName) => _isUserNameValid(userName));
 
   @override
@@ -87,13 +87,6 @@ class LoginViewModel
   bool _isPasswordValid(String password) => password.isNotEmpty;
   bool _isUserNameValid(String userName) => userName.isNotEmpty;
 
-  @override
-  // TODO: implement isOutputPasswordValid
-  Stream<bool> get isOutputPasswordValid => throw UnimplementedError();
-
-  @override
-  // TODO: implement isOutputUserNameValid
-  Stream<bool> get isOutputUserNameValid => throw UnimplementedError();
 }
 
 abstract class LoginViewModelInputs {
