@@ -35,7 +35,7 @@ class _LoginViewState extends State<LoginView> {
   }
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return _getContentWidget();
   }
 
   @override
