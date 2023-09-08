@@ -14,7 +14,7 @@ class LoginView extends StatefulWidget {
 }
 
 class _LoginViewState extends State<LoginView> {
-  final LoginViewModel _viewModel = LoginViewModel();
+  final LoginViewModel _viewModel = LoginViewModel(_loginUseCase);
   final TextEditingController _userNameController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
